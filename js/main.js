@@ -1,4 +1,6 @@
 // LBEF Global Connect Main Script
+import './components.js';
+
 console.log("Welcome to LBEF Global Connect");
 
 document.addEventListener('DOMContentLoaded', () => {
