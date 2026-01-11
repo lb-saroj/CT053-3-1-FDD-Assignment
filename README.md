@@ -53,8 +53,8 @@ LBEF_Global_Connect/
 ## 👥 Team Roles
 - **Member 1 - Saroj (General):** Site architecture, Home page, About section.
 - **Member 2 - Nishant (Membership):** Forms, Contact pages, Interaction logic.
-- **Member 3 (Events):** Multimedia, Image galleries, Event calendar.
-- **Member 4 (Academic):** Data tables, Partnership info, Student resources.
+- **Member 3 - Prasanna (Events):** Multimedia, Image galleries, Event calendar.
+- **Member 4 - Avash (Academic):** Data tables, Partnership info, Student resources.
 
 ---
 
