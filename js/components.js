@@ -2,13 +2,6 @@
 // Header Component
 export class Header extends HTMLElement {
   connectedCallback() {
-    // Add base implementation for gh-pages
-    if (!document.querySelector('base')) {
-      const base = document.createElement('base');
-      base.href = '/CT053-3-1-FDD-Assignment/';
-      document.head.appendChild(base);
-    }
-
     this.innerHTML = `
         <header>
             <nav>
