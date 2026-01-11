@@ -4,7 +4,7 @@
 
 **LBEF Global Connect** is a student-led web platform that bridges Lord Buddha Education Foundation (LBEF) students with the global academic community, highlighting the partnership with APU Malaysia. This project is for the CT053-3-1 Fundamentals of Web Design and Development group assignment.
 
-https://lb-saroj.github.io/CT053-3-1-FDD-Assignment/index.html
+[Display Link](https://lb-saroj.github.io/CT053-3-1-FDD-Assignment/index.html)
 
 ---
 
