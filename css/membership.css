@@ -1,0 +1,129 @@
+/* ==========================================
+   LBEF Global Connect — Membership Stylesheet
+   Used by: register, faq, contact
+   ========================================== */
+
+/* ===== FORMS ===== */
+.form-wrap { max-width: 640px; margin: 0 auto; }
+
+.form-group { margin-bottom: 1.25rem; }
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text-dark);
+    background: white;
+    box-sizing: border-box;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--lbef-blue);
+    box-shadow: 0 0 0 3px rgba(17, 93, 168, 0.12);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-note {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    margin-top: 0.3rem;
+}
+
+/* ===== FAQ ACCORDION ===== */
+.faq-list { max-width: 820px; margin: 0 auto; }
+
+.faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: white;
+    border: none;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-dark);
+    font-family: inherit;
+}
+.faq-question:hover { background: #f5f8ff; }
+.faq-question.active { background: var(--lbef-blue); color: white; }
+
+.faq-icon { font-size: 1.2rem; }
+.faq-question.active .faq-icon { transform: rotate(45deg); }
+
+.faq-answer {
+    padding: 0 1.25rem;
+    max-height: 0;
+    overflow: hidden;
+    background: white;
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.6;
+}
+.faq-answer.open {
+    max-height: 400px;
+    padding: 1rem 1.25rem 1.25rem;
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-info h3 { margin-top: 0; }
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+.contact-item i { color: var(--lbef-blue); font-size: 1.1rem; margin-top: 3px; flex-shrink: 0; }
+
+.map-placeholder {
+    background: #e8f0fb;
+    border-radius: 8px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--lbef-blue);
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+.map-placeholder p { font-size: 0.85rem; margin: 0; color: var(--text-muted); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+}
