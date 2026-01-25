@@ -4,31 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join the Club | LBEF Global Connect</title>
-    <base href="/CT053-3-1-FDD-Assignment/">
-    <link rel="stylesheet" href="../../css/style.css">
+    <base href="/">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/membership.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <main-header></main-header> 
 
-    <main class="container">
-        <h1>Join the Club</h1>
-        <p class="breadcrumb" style="color:#777; font-size:0.9rem;">Home > Pages > membership > Join the Club</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        
-        <div class="content-area">
-            <p>Welcome to the <strong>Join the Club</strong> page.</p>
-            <p><strong>Assigned Team:</strong> MEMBERSHIP</p>
-            <br>
-            <div style="background: #eef; padding: 15px; border-left: 4px solid var(--lbef-blue);">
-                <p><strong>To-Do:</strong> Replace this placeholder with specific content for Join the Club.</p>
+    <main-header></main-header>
+
+    <!-- Page banner -->
+    <div class="page-header">
+        <h1>Join LBEF Global Connect</h1>
+        <p>Become a member and unlock global opportunities</p>
+        <p class="breadcrumb">
+            <a href="index.html">Home</a> &rsaquo; Membership &rsaquo; Join the Club
+        </p>
+    </div>
+
+    <div class="content-wrap">
+
+        <!-- Benefits summary -->
+        <div class="card-grid" style="margin-bottom: 3rem;">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-ticket-alt"></i></div>
+                <h3>Exclusive Events</h3>
+                <p>Priority access to workshops, seminars, networking nights, and cultural events.</p>
             </div>
-            <br>
-            <a href="#" class="btn">View Details</a>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>APU Transfer Support</h3>
+                <p>One-on-one guidance from seniors who have already completed the APU transfer process.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Recognition &amp; Certificates</h3>
+                <p>Club membership certificates, volunteer hours, and recommendation letters from the faculty advisor.</p>
+            </div>
         </div>
-    </main>
+
+        <!-- Registration form -->
+        <div class="page-content">
+            <h2><i class="fas fa-user-plus"></i> Membership Registration Form</h2>
+            <p style="color: var(--text-muted);">
+                Fill in the form below. Membership is <strong>free</strong> for all enrolled LBEF students.
+                You will receive a confirmation email within 2 working days.
+            </p>
+
+            <form id="registerForm" style="margin-top: 1.5rem;">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" placeholder="e.g. Saroj" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" placeholder="e.g. Adhikari" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Student Email *</label>
+                    <input type="email" id="email" placeholder="e.g. s12345@lbef.edu.np" required>
+                    <p class="form-note">Use your official LBEF student email.</p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentId">Student ID *</label>
+                        <input type="text" id="studentId" placeholder="e.g. LBEF-2024-001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="e.g. 9800000000">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="program">Program *</label>
+                        <select id="program" required>
+                            <option value="">-- Select your program --</option>
+                            <option>BSc Computing</option>
+                            <option>BSc IT</option>
+                            <option>BBA</option>
+                            <option>BCA</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year of Study *</label>
+                        <select id="year" required>
+                            <option value="">-- Select year --</option>
+                            <option>1st Year</option>
+                            <option>2nd Year</option>
+                            <option>3rd Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="interest">Why do you want to join? *</label>
+                    <textarea id="interest" placeholder="Tell us briefly why you want to join LBEF Global Connect..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" required style="width:auto; margin-right:8px;">
+                        I agree to the <a href="pages/general/legal.html">Terms of Service</a> and
+                        <a href="pages/general/legal.html">Privacy Policy</a>. *
+                    </label>
+                </div>
+
+                <button type="submit" class="btn" style="font-size: 1rem; padding: 12px 32px;">
+                    <i class="fas fa-paper-plane"></i> Submit Registration
+                </button>
+
+            </form>
+
+            <!-- Success message (hidden by default, shown by JS) -->
+            <div id="successMsg" style="display:none; margin-top: 1.5rem;">
+                <div class="info-box">
+                    <p>
+                        <i class="fas fa-check-circle" style="color:green;"></i>
+                        <strong>Registration submitted!</strong> Thank you for joining LBEF Global Connect.
+                        We will send a confirmation to your email within 2 working days.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <main-footer></main-footer>
-    <script type= "module" src="../../js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
+
+    <!-- Registration form handler -->
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page reload
+            this.style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+            window.scrollTo({ top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth' });
+        });
+    </script>
+
 </body>
 </html>
