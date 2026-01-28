@@ -4,32 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | LBEF Global Connect</title>
-    <base href="/CT053-3-1-FDD-Assignment/">
-    <link rel="stylesheet" href="../../css/style.css">
+    <base href="/">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <main-header></main-header>
 
-    <main class="container">
-        <h1>About Us</h1>
-        <p class="breadcrumb" style="color:#777; font-size:0.9rem;">Home > Pages > general > About Us</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        
-        <div class="content-area">
-            <p>Welcome to the <strong>About Us</strong> page.</p>
-            <p><strong>Assigned Team:</strong> GENERAL</p>
-            <br>
-            <div style="background: #eef; padding: 15px; border-left: 4px solid var(--lbef-blue);">
-                <p><strong>To-Do:</strong> Replace this placeholder with specific content for About Us.</p>
-                <p><strong>To-Do:</strong> Quick Test for the merge.</p>
+    <!-- Page banner -->
+    <div class="page-header">
+        <h1>About LBEF Global Connect</h1>
+        <p>Our mission, our story, and what we stand for</p>
+        <p class="breadcrumb">
+            <a href="index.html">Home</a> &rsaquo; About Us
+        </p>
+    </div>
+
+    <div class="content-wrap">
+
+        <!-- Mission & Vision cards -->
+        <div class="two-col" style="margin-bottom: 2.5rem;">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                <h3>Our Mission</h3>
+                <p>
+                    To bridge the gap between local education and global opportunities by connecting LBEF students
+                    with international academic partners, cultural exchanges, and career networks.
+                </p>
             </div>
-            <br>
-            <a href="#" class="btn">View Details</a>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-eye"></i></div>
+                <h3>Our Vision</h3>
+                <p>
+                    A future where every LBEF student has access to world-class education and the global mindset
+                    needed to thrive in an interconnected world.
+                </p>
+            </div>
         </div>
-    </main>
+
+        <!-- Who we are -->
+        <div class="page-content">
+            <h2>Who We Are</h2>
+            <p>
+                <strong>LBEF Global Connect</strong> is the official student club of
+                <strong>Lord Buddha Education Foundation (LBEF)</strong>, Kathmandu, Nepal.
+                We were established to support students who wish to take advantage of the partnership
+                between LBEF and <strong>Asia Pacific University (APU), Malaysia</strong>.
+            </p>
+            <p>
+                Through our club, students gain access to information about credit transfer, housing in Malaysia,
+                scholarship opportunities, and networking events with alumni who have successfully made the transition.
+            </p>
+
+            <div class="info-box">
+                <p>
+                    <strong><i class="fas fa-handshake"></i> LBEF–APU Partnership:</strong>
+                    Students completing their first year at LBEF can transfer to APU Malaysia and receive
+                    full credit recognition, completing their degree in a globally ranked university.
+                </p>
+            </div>
+
+            <h2>What We Do</h2>
+
+            <div class="card-grid" style="margin-top: 1rem;">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Workshops &amp; Seminars</h3>
+                    <p>Regular sessions on study skills, IELTS preparation, visa guidance, and life abroad.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>Networking Events</h3>
+                    <p>Connect with seniors, APU alumni, and international students at our organised events.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Application Support</h3>
+                    <p>Guidance on admission documents, credit transfer applications, and scholarship essays.</p>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 2rem;">Our Values</h2>
+            <ul style="color: var(--text-muted); line-height: 2;">
+                <li><strong>Inclusivity</strong> — We welcome students of all backgrounds and programs.</li>
+                <li><strong>Excellence</strong> — We push each other to achieve the highest academic standards.</li>
+                <li><strong>Community</strong> — We build lifelong friendships and professional networks.</li>
+                <li><strong>Integrity</strong> — We provide honest, accurate information to every student.</li>
+            </ul>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="pages/general/team.html" class="btn-blue">Meet the Committee</a>
+                <a href="pages/membership/register.html" class="btn">Join the Club</a>
+            </div>
+        </div>
+
+    </div>
 
     <main-footer></main-footer>
-    <script type= "module" src="../../js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
