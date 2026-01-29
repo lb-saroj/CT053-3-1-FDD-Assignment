@@ -4,32 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Gallery | LBEF Global Connect</title>
-    <base href="/CT053-3-1-FDD-Assignment/">
-    <link rel="stylesheet" href="../../css/style.css">
+    <base href="/">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/events.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <main-header></main-header>
 
-    <main class="container">
+    <!-- Page banner -->
+    <div class="page-header">
         <h1>Photo Gallery</h1>
-        <p class="breadcrumb" style="color:#777; font-size:0.9rem;">Home > Pages > events > Photo Gallery</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        
-        <div class="content-area">
-            <p>Welcome to the <strong>Photo Gallery</strong> page.</p>
-            <p><strong>Assigned Team:</strong> EVENTS</p>
-            <br>
-            <div style="background: #eef; padding: 15px; border-left: 4px solid var(--lbef-blue);">
-                <p><strong>To-Do:</strong> Replace this placeholder with specific content for Photo Gallery.</p>
-            </div>
-            <br>
-            <a href="#" class="btn">View Details</a>
+        <p>Memories from our events, trips, and campus life</p>
+        <p class="breadcrumb">
+            <a href="index.html">Home</a> &rsaquo;
+            <a href="pages/events/home.html">Events</a> &rsaquo; Gallery
+        </p>
+    </div>
+
+    <div class="content-wrap">
+
+        <!-- Category filter buttons -->
+        <div class="event-filters">
+            <button class="filter-btn active" data-filter="all">All Photos</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+            <button class="filter-btn" data-filter="campus">Campus Life</button>
+            <button class="filter-btn" data-filter="apu">APU Malaysia</button>
         </div>
-    </main>
+
+        <!-- Gallery grid — 4-column, varying sizes -->
+        <div class="gallery-grid" id="galleryGrid">
+
+            <!-- Row 1 -->
+            <div class="gallery-item gallery-large" data-cat="events">
+                <img src="assets/g-main.jpg" alt="Cultural Night 2025">
+                <div class="gallery-overlay"><span>Cultural Night 2025</span></div>
+            </div>
+            <div class="gallery-item" data-cat="campus">
+                <img src="assets/g-2.jpg" alt="Study Hall">
+                <div class="gallery-overlay"><span>Study Hall</span></div>
+            </div>
+            <div class="gallery-item" data-cat="apu">
+                <img src="assets/g-3.jpg" alt="APU Campus Visit">
+                <div class="gallery-overlay"><span>APU Campus Visit</span></div>
+            </div>
+            <div class="gallery-item gallery-wide" data-cat="events">
+                <img src="assets/g-4.jpg" alt="IELTS Workshop">
+                <div class="gallery-overlay"><span>IELTS Workshop</span></div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="gallery-item" data-cat="campus">
+                <img src="assets/g-5.jpg" alt="Classroom">
+                <div class="gallery-overlay"><span>Classroom Activities</span></div>
+            </div>
+            <div class="gallery-item" data-cat="events">
+                <img src="assets/g-6.jpg" alt="Club Meeting">
+                <div class="gallery-overlay"><span>Club Meeting</span></div>
+            </div>
+            <div class="gallery-item gallery-large" data-cat="apu">
+                <img src="assets/g-7.jpg" alt="Kuala Lumpur Skyline">
+                <div class="gallery-overlay"><span>Kuala Lumpur</span></div>
+            </div>
+            <div class="gallery-item" data-cat="campus">
+                <img src="assets/g-8.jpg" alt="Library">
+                <div class="gallery-overlay"><span>LBEF Library</span></div>
+            </div>
+            <div class="gallery-item" data-cat="events">
+                <img src="assets/g-9.jpg" alt="Graduation">
+                <div class="gallery-overlay"><span>Graduation Ceremony</span></div>
+            </div>
+            <div class="gallery-item gallery-wide" data-cat="campus">
+                <img src="assets/g-10.jpg" alt="Campus exterior">
+                <div class="gallery-overlay"><span>LBEF Campus</span></div>
+            </div>
+
+        </div>
+
+    </div>
 
     <main-footer></main-footer>
-    <script type= "module" src="../../js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
+
+    <!-- Gallery filter script -->
+    <script>
+        // Filter gallery items by category when a filter button is clicked
+        document.querySelectorAll('.filter-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                // Update active button style
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                var filter = this.getAttribute('data-filter');
+                var items = document.querySelectorAll('#galleryGrid .gallery-item');
+
+                items.forEach(function(item) {
+                    if (filter === 'all' || item.getAttribute('data-cat') === filter) {
+                        item.style.display = 'block'; // show
+                    } else {
+                        item.style.display = 'none'; // hide
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
