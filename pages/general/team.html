@@ -4,46 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Committee | LBEF Global Connect</title>
-    <base href="/CT053-3-1-FDD-Assignment/">
-    <link rel="stylesheet" href="../../css/style.css">
+    <base href="/">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="../../index.html" style="color:white; text-decoration:none;">
-                    <h1><i class="fas fa-globe-asia"></i> LBEF Global</h1>
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../general/about.html">About</a></li>
-                <li><a href="../events/home.html">Events</a></li>
-                <li><a href="../academic/partnership.html">Academics</a></li>
-                <li><a href="../membership/contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main class="container">
+    <main-header></main-header>
+
+    <!-- Page banner -->
+    <div class="page-header">
         <h1>Our Committee</h1>
-        <p class="breadcrumb" style="color:#777; font-size:0.9rem;">Home > Pages > general > Our Committee</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        
-        <div class="content-area">
-            <p>Welcome to the <strong>Our Committee</strong> page.</p>
-            <p><strong>Assigned Team:</strong> GENERAL</p>
-            <br>
-            <div style="background: #eef; padding: 15px; border-left: 4px solid var(--lbef-blue);">
-                <p><strong>To-Do:</strong> Replace this placeholder with specific content for Our Committee.</p>
+        <p>Meet the students who run LBEF Global Connect</p>
+        <p class="breadcrumb">
+            <a href="index.html">Home</a> &rsaquo; <a href="pages/general/about.html">About</a> &rsaquo; Committee
+        </p>
+    </div>
+
+    <div class="content-wrap">
+
+        <p style="text-align:center; color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem;">
+            Our committee is made up of passionate LBEF students from various departments who volunteer
+            their time to make the club a success.
+        </p>
+
+        <!-- Executive Committee -->
+        <h2 style="text-align:center; margin-bottom: 1.5rem;">Executive Committee (2025–2026)</h2>
+        <div class="team-grid">
+
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user-tie"></i></div>
+                <h3>Saroj Adhikari</h3>
+                <p class="role">President</p>
+                <p class="dept">BSc Computing</p>
             </div>
-            <br>
-            <a href="#" class="btn">View Details</a>
+
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h3>Nishant Sharma</h3>
+                <p class="role">Vice President</p>
+                <p class="dept">BBA</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h3>Prasanna Thapa</h3>
+                <p class="role">Events Coordinator</p>
+                <p class="dept">BSc IT</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h3>Avash Karki</h3>
+                <p class="role">Academic Liaison</p>
+                <p class="dept">BSc Computing</p>
+            </div>
+
         </div>
-    </main>
+
+        <!-- General Committee -->
+        <h2 style="text-align:center; margin: 3rem 0 1.5rem;">General Committee Members</h2>
+        <div class="team-grid">
+
+            <div class="team-card">
+                <div class="team-avatar" style="background:#fef9ee; border-color: var(--lbef-gold);"><i class="fas fa-user" style="color: var(--lbef-gold);"></i></div>
+                <h3>Aisha Rai</h3>
+                <p class="role">Membership Secretary</p>
+                <p class="dept">BBA</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar" style="background:#fef9ee; border-color: var(--lbef-gold);"><i class="fas fa-user" style="color: var(--lbef-gold);"></i></div>
+                <h3>Roshan Gurung</h3>
+                <p class="role">Treasurer</p>
+                <p class="dept">BBA Finance</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar" style="background:#fef9ee; border-color: var(--lbef-gold);"><i class="fas fa-user" style="color: var(--lbef-gold);"></i></div>
+                <h3>Priya Basnet</h3>
+                <p class="role">Social Media Manager</p>
+                <p class="dept">BSc IT</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar" style="background:#fef9ee; border-color: var(--lbef-gold);"><i class="fas fa-user" style="color: var(--lbef-gold);"></i></div>
+                <h3>Bibek Tamang</h3>
+                <p class="role">Design Lead</p>
+                <p class="dept">BSc Computing</p>
+            </div>
+
+        </div>
+
+        <!-- Faculty Advisor -->
+        <div class="page-content" style="margin-top: 3rem;">
+            <h2>Faculty Advisor</h2>
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                <div class="team-avatar" style="width: 70px; height: 70px; flex-shrink: 0;">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0 0 0.25rem;">Dr. Ramesh Paudel</h3>
+                    <p style="color: var(--lbef-blue); font-weight: 600; margin:0;">Faculty Advisor</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.25rem 0 0;">
+                        Department of Computing — LBEF College
+                    </p>
+                </div>
+            </div>
+            <p style="margin-top: 1rem; color: var(--text-muted);">
+                Dr. Paudel has been guiding LBEF Global Connect since its founding in 2020.
+                He coordinates directly with APU Malaysia's admission team to ensure smooth transitions for our students.
+            </p>
+        </div>
+
+        <div class="text-center mt-2">
+            <a href="pages/membership/register.html" class="btn">Join the Club</a>
+        </div>
+
+    </div>
 
     <main-footer></main-footer>
-    <script type= "module" src="../../js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
