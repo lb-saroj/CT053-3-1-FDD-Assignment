@@ -4,33 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Blog | LBEF Global Connect</title>
-    <base href="/CT053-3-1-FDD-Assignment/">
-    <link rel="stylesheet" href="../../css/style.css">
+    <base href="/">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/events.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <main-header></main-header>
 
-    <main class="container">
+    <!-- Page banner -->
+    <div class="page-header">
         <h1>Student Blog</h1>
-        <p class="breadcrumb" style="color:#777; font-size:0.9rem;">Home > Pages > events > Student Blog</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        
-        <div class="content-area">
-            <p>Welcome to the <strong>Student Blog</strong> page.</p>
-            <p><strong>Assigned Team:</strong> EVENTS</p>
-            <br>
-            <div style="background: #eef; padding: 15px; border-left: 4px solid var(--lbef-blue);">
-                <p><strong>To-Do:</strong> Replace this placeholder with specific content for Student Blog.</p>
+        <p>Stories, tips, and experiences from LBEF students around the world</p>
+        <p class="breadcrumb">
+            <a href="index.html">Home</a> &rsaquo;
+            <a href="pages/events/home.html">Events</a> &rsaquo; Blog
+        </p>
+    </div>
+
+    <div class="content-wrap">
+
+        <!-- Featured article (full-width) -->
+        <div class="news-card" style="display:flex; flex-direction:row; margin-bottom: 2.5rem; max-width: 100%;">
+            <div class="news-img-wrap" style="flex: 0 0 45%;">
+                <span class="news-badge badge-blue">Featured</span>
+                <img
+                    src="assets/blog-feat.jpg"
+                    alt="Student in Kuala Lumpur"
+                    class="news-img"
+                    style="height:100%; min-height: 240px;"
+                >
             </div>
-            <br>
-            <a href="#" class="btn">View Details</a>
+            <div class="news-body" style="flex: 1; padding: 2rem;">
+                <p class="news-date"><i class="fas fa-clock"></i> Feb 18, 2026 &nbsp;|&nbsp; <i class="fas fa-user"></i> Saroj Adhikari</p>
+                <h2 style="margin: 0.5rem 0 0.75rem; font-size: 1.4rem;">
+                    My First Month at APU Malaysia: What I Wish I Knew
+                </h2>
+                <p style="color: var(--text-muted); line-height: 1.7;">
+                    Moving from Kathmandu to Kuala Lumpur was the biggest adventure of my life. Here's everything
+                    I learned in my first month — from navigating the campus to finding affordable Nepali food nearby.
+                </p>
+                <a href="#" class="btn-blue" style="font-size: 0.9rem; padding: 9px 20px;">Read Full Story &rarr;</a>
+            </div>
         </div>
-    </main>
 
-   <main-footer></main-footer>
-   <script type= "module" src="../../js/main.js"></script>
+        <!-- Blog grid -->
+        <h2 style="margin-bottom: 1.5rem;">All Articles</h2>
+        <div class="blog-grid">
 
-    
+            <div class="blog-card">
+                <img src="assets/blog-1.jpg" alt="IELTS tips" class="blog-img">
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Study Tips</span>
+                        <span class="blog-date"><i class="fas fa-clock"></i> Feb 10, 2026</span>
+                    </div>
+                    <h3>How I Scored 7.0 on IELTS in 60 Days</h3>
+                    <p>A practical study plan from a student who started from scratch and achieved their target score in two months.</p>
+                    <a href="#" class="card-link">Read more &rarr;</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="assets/blog-2.jpg" alt="KL apartment" class="blog-img">
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Housing</span>
+                        <span class="blog-date"><i class="fas fa-clock"></i> Jan 30, 2026</span>
+                    </div>
+                    <h3>Finding Affordable Housing Near APU: A Student Guide</h3>
+                    <p>My experience finding a shared apartment near APU Bukit Jalil — costs, tips, and what to avoid.</p>
+                    <a href="#" class="card-link">Read more &rarr;</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="assets/blog-3.jpg" alt="Culture shock" class="blog-img">
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Life Abroad</span>
+                        <span class="blog-date"><i class="fas fa-clock"></i> Jan 22, 2026</span>
+                    </div>
+                    <h3>Culture Shock &amp; How I Got Over It</h3>
+                    <p>Moving abroad can be overwhelming. Here's how I adapted to life in Malaysia as a Nepali student.</p>
+                    <a href="#" class="card-link">Read more &rarr;</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="assets/blog-4.jpg" alt="Scholarship" class="blog-img">
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Scholarship</span>
+                        <span class="blog-date"><i class="fas fa-clock"></i> Jan 15, 2026</span>
+                    </div>
+                    <h3>I Got a Scholarship at APU — Here's How</h3>
+                    <p>Step-by-step guide to applying for the APU International Merit Scholarship as an LBEF transfer student.</p>
+                    <a href="#" class="card-link">Read more &rarr;</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="assets/blog-5.jpg" alt="Networking" class="blog-img">
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Career</span>
+                        <span class="blog-date"><i class="fas fa-clock"></i> Jan 8, 2026</span>
+                    </div>
+                    <h3>Building a Professional Network While Studying Abroad</h3>
+                    <p>APU's career events and LinkedIn strategies that helped me land an internship before graduation.</p>
+                    <a href="#" class="card-link">Read more &rarr;</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="assets/blog-6.jpg" alt="Cultural exchange" class="blog-img">
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Events</span>
+                        <span class="blog-date"><i class="fas fa-clock"></i> Dec 20, 2025</span>
+                    </div>
+                    <h3>LBEF Cultural Night 2025 — A Night to Remember</h3>
+                    <p>A recap of our biggest annual event, with photos, highlights, and what made it so special this year.</p>
+                    <a href="#" class="card-link">Read more &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Want to contribute? -->
+        <div class="info-box" style="margin-top: 3rem;">
+            <p>
+                <i class="fas fa-pen"></i>
+                <strong>Want to contribute?</strong>
+                Share your own story on the blog.
+                <a href="pages/membership/contact.html">Contact us</a> with your article idea.
+            </p>
+        </div>
+
+    </div>
+
+    <main-footer></main-footer>
+    <script type="module" src="js/main.js"></script>
+
+    <!-- Make featured article responsive on mobile -->
+    <style>
+        @media (max-width: 600px) {
+            .news-card[style] { flex-direction: column !important; }
+            .news-img-wrap[style] { flex: none !important; }
+        }
+    </style>
+
 </body>
 </html>
