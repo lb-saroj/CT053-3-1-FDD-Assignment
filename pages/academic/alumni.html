@@ -4,33 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Stories | LBEF Global Connect</title>
-    <base href="/CT053-3-1-FDD-Assignment/">
-    <link rel="stylesheet" href="../../css/style.css">
+    <base href="/">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <main-header></main-header>
 
-    <main class="container">
+    <!-- Page banner -->
+    <div class="page-header">
         <h1>Alumni Stories</h1>
-        <p class="breadcrumb" style="color:#777; font-size:0.9rem;">Home > Pages > academic > Alumni Stories</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        
-        <div class="content-area">
-            <p>Welcome to the <strong>Alumni Stories</strong> page.</p>
-            <p><strong>Assigned Team:</strong> ACADEMIC</p>
-            <br>
-            <div style="background: #eef; padding: 15px; border-left: 4px solid var(--lbef-blue);">
-                <p><strong>To-Do:</strong> Replace this placeholder with specific content for Alumni Stories.</p>
-            </div>
-            <br>
-            <a href="#" class="btn">View Details</a>
+        <p>Hear from LBEF students who made the leap to APU Malaysia</p>
+        <p class="breadcrumb">
+            <a href="index.html">Home</a> &rsaquo;
+            <a href="pages/academic/partnership.html">Academics</a> &rsaquo; Alumni Stories
+        </p>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-num">120+</span>
+            <div class="stat-label">Alumni at APU</div>
         </div>
-    </main>
+        <div class="stat-item">
+            <span class="stat-num">95%</span>
+            <div class="stat-label">Completed Degrees</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">80%</span>
+            <div class="stat-label">Employed Within 6 Months</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">12+</span>
+            <div class="stat-label">Countries They Work In</div>
+        </div>
+    </div>
+
+    <div class="content-wrap">
+
+        <!-- Featured alumni -->
+        <div class="news-card" style="display:flex; flex-direction:row; margin-bottom: 2.5rem; max-width: 100%;">
+            <div style="flex: 0 0 38%;">
+                <img
+                    src="assets/alumni-feat.jpg"
+                    alt="Featured alumni"
+                    style="width:100%; height:100%; min-height:240px; object-fit:cover; display:block; border-radius:10px 0 0 10px;"
+                >
+            </div>
+            <div class="news-body" style="flex: 1; padding: 2rem; display:flex; flex-direction:column; justify-content:center;">
+                <p class="news-date"><i class="fas fa-graduation-cap"></i> Class of 2023 &nbsp;|&nbsp; BSc Computer Science</p>
+                <h2 style="margin: 0.5rem 0 0.75rem; font-size: 1.4rem;">
+                    "APU gave me a global perspective I could never have got staying in Nepal alone."
+                </h2>
+                <p style="color: var(--text-muted); line-height: 1.7; margin: 0 0 1.25rem;">
+                    Priya transferred from LBEF to APU in 2021 and graduated with a First Class Honours
+                    in Computer Science. She is now working as a software engineer at a KL-based tech startup.
+                </p>
+                <p style="font-weight: 700; color: var(--text-dark); margin: 0;">— Priya Maharjan, Lalitpur</p>
+            </div>
+        </div>
+
+        <!-- Alumni story cards -->
+        <div class="news-grid">
+
+            <div class="news-card">
+                <div class="news-img-wrap">
+                    <span class="news-badge badge-blue">IT &amp; Software</span>
+                    <img src="assets/alumni-1.jpg" alt="Alumni" class="news-img">
+                </div>
+                <div class="news-body">
+                    <p class="news-date"><i class="fas fa-graduation-cap"></i> APU, 2022 &nbsp;|&nbsp; BSc IT</p>
+                    <h3>Rohan Shrestha</h3>
+                    <p>
+                        "I was nervous about moving abroad but LBEF Global Connect workshops gave me the confidence.
+                        I'm now a junior developer at an IT company in Singapore."
+                    </p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-img-wrap">
+                    <span class="news-badge badge-green">Business</span>
+                    <img src="assets/alumni-2.jpg" alt="Alumni" class="news-img">
+                </div>
+                <div class="news-body">
+                    <p class="news-date"><i class="fas fa-graduation-cap"></i> APU, 2023 &nbsp;|&nbsp; BBA</p>
+                    <h3>Sunita Gurung</h3>
+                    <p>
+                        "The credit transfer saved me a full year's fees. My APU degree opened doors to
+                        management roles I never imagined possible from Nepal."
+                    </p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-img-wrap">
+                    <span class="news-badge badge-purple">Computing</span>
+                    <img src="assets/alumni-3.jpg" alt="Alumni" class="news-img">
+                </div>
+                <div class="news-body">
+                    <p class="news-date"><i class="fas fa-graduation-cap"></i> APU, 2024 &nbsp;|&nbsp; BSc Computing</p>
+                    <h3>Anil Tamang</h3>
+                    <p>
+                        "From Kathmandu to Kuala Lumpur was a huge step. The LBEF alumni WhatsApp group
+                        helped me find housing and adjust within days of arriving."
+                    </p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-img-wrap">
+                    <span class="news-badge badge-orange">Scholarship</span>
+                    <img src="assets/alumni-4.jpg" alt="Alumni" class="news-img">
+                </div>
+                <div class="news-body">
+                    <p class="news-date"><i class="fas fa-graduation-cap"></i> APU, 2023 &nbsp;|&nbsp; BSc IT</p>
+                    <h3>Deepika Rai</h3>
+                    <p>
+                        "I received an APU scholarship that covered 20% of my fees. The club's workshops on
+                        scholarship essays made the difference in my application."
+                    </p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-img-wrap">
+                    <span class="news-badge badge-red">Career Abroad</span>
+                    <img src="assets/alumni-5.jpg" alt="Alumni" class="news-img">
+                </div>
+                <div class="news-body">
+                    <p class="news-date"><i class="fas fa-graduation-cap"></i> APU, 2022 &nbsp;|&nbsp; BBA</p>
+                    <h3>Sagar Pandey</h3>
+                    <p>
+                        "APU's career fairs connected me with companies in Malaysia, Singapore, and Australia.
+                        I had three job offers before I even graduated."
+                    </p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-img-wrap">
+                    <span class="news-badge badge-blue">Research</span>
+                    <img src="assets/alumni-6.jpg" alt="Alumni" class="news-img">
+                </div>
+                <div class="news-body">
+                    <p class="news-date"><i class="fas fa-graduation-cap"></i> APU, 2024 &nbsp;|&nbsp; BSc Computing</p>
+                    <h3>Manisha KC</h3>
+                    <p>
+                        "I stayed on to do a Masters at APU. The research facilities there are incredible,
+                        and my supervisor actively helps with publications."
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="info-box" style="margin-top: 3rem;">
+            <p>
+                <i class="fas fa-star"></i>
+                <strong>Your story could be here!</strong>
+                If you're an LBEF–APU alumnus and would like to share your experience to inspire
+                current students, <a href="pages/membership/contact.html">get in touch with us</a>.
+            </p>
+        </div>
+
+        <div class="text-center mt-2">
+            <a href="pages/academic/transfer.html" class="btn">Start Your Transfer Journey</a>
+        </div>
+
+    </div>
 
     <main-footer></main-footer>
+    <script type="module" src="js/main.js"></script>
 
-    <script type= "module" src="../../js/main.js"></script>
-    
+    <!-- Make featured alumni box responsive -->
+    <style>
+        @media (max-width: 600px) {
+            .news-card[style] { flex-direction: column !important; }
+        }
+    </style>
+
 </body>
 </html>
