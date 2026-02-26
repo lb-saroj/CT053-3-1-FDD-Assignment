@@ -4,31 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | LBEF Global Connect</title>
-    <base href="/CT053-3-1-FDD-Assignment/">
-    <link rel="stylesheet" href="../../css/style.css">
+    <base href="/">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/membership.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <main-header></main-header>
 
-    <main class="container">
+    <!-- Page banner -->
+    <div class="page-header">
         <h1>Contact Us</h1>
-        <p class="breadcrumb" style="color:#777; font-size:0.9rem;">Home > Pages > membership > Contact Us</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        
-        <div class="content-area">
-            <p>Welcome to the <strong>Contact Us</strong> page.</p>
-            <p><strong>Assigned Team:</strong> MEMBERSHIP</p>
-            <br>
-            <div style="background: #eef; padding: 15px; border-left: 4px solid var(--lbef-blue);">
-                <p><strong>To-Do:</strong> Replace this placeholder with specific content for Contact Us.</p>
+        <p>Get in touch — we're here to help</p>
+        <p class="breadcrumb">
+            <a href="index.html">Home</a> &rsaquo; Contact
+        </p>
+    </div>
+
+    <div class="content-wrap">
+        <div class="two-col-narrow">
+
+            <!-- Left: contact info + map -->
+            <div class="contact-info">
+                <h3>Find Us</h3>
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>LBEF College</strong><br>
+                        Minbhawan, New Baneshwor<br>
+                        Kathmandu, Nepal
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Phone</strong><br>
+                        +977-1-4XXXXXX
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        global@lbef.edu.np
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Office Hours</strong><br>
+                        Sunday – Friday: 9:00am – 5:00pm
+                    </div>
+                </div>
+
+                <!-- Map placeholder -->
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Minbhawan, Kathmandu</p>
+                </div>
+
+                <!-- Social links -->
+                <h3 style="margin-top: 2rem;">Follow Us</h3>
+                <div style="display: flex; gap: 0.75rem;">
+                    <a href="#" class="btn-blue" style="padding: 8px 14px; font-size: 0.85rem;">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="#" class="btn-blue" style="padding: 8px 14px; font-size: 0.85rem;">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
             </div>
-            <br>
-            <a href="#" class="btn">View Details</a>
+
+            <!-- Right: contact form -->
+            <div class="page-content" style="margin: 0;">
+                <h3>Send Us a Message</h3>
+                <p style="color: var(--text-muted);">
+                    Have a question about events, the APU partnership, or membership? Send us a message
+                    and a committee member will respond within 1–2 working days.
+                </p>
+
+                <form id="contactForm" style="margin-top: 1.25rem;">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cName">Full Name *</label>
+                            <input type="text" id="cName" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cEmail">Email *</label>
+                            <input type="email" id="cEmail" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cSubject">Subject *</label>
+                        <select id="cSubject" required>
+                            <option value="">-- Select a topic --</option>
+                            <option>APU Credit Transfer</option>
+                            <option>Event Enquiry</option>
+                            <option>Membership</option>
+                            <option>Scholarship Information</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cMessage">Message *</label>
+                        <textarea id="cMessage" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="font-size: 1rem; padding: 12px 28px;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+
+                <!-- Success message -->
+                <div id="contactSuccess" style="display:none; margin-top: 1.5rem;">
+                    <div class="info-box">
+                        <p>
+                            <i class="fas fa-check-circle" style="color:green;"></i>
+                            <strong>Message sent!</strong> Thank you for reaching out.
+                            We will reply to your email within 1–2 working days.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </main>
+    </div>
 
     <main-footer></main-footer>
-    <script type= "module" src="../../js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('contactSuccess').style.display = 'block';
+        });
+    </script>
+
 </body>
 </html>
