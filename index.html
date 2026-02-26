@@ -4,32 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | LBEF Global Connect</title>
-    <base href="/CT053-3-1-FDD-Assignment/">
-    <link rel="stylesheet" href="/css/style.css">
+    <base href="/">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <main-header></main-header>
 
-    <main class="container">
-        <h1>Home</h1>
-        <p class="breadcrumb" style="color:#777; font-size:0.9rem;">Home > Pages > . > Home</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        
-        <div class="content-area">
-            <p>Welcome to the <strong>Home</strong> page.</p>
-            <p><strong>Assigned Team:</strong> .</p>
-            <br>
-            <div style="background: #eef; padding: 15px; border-left: 4px solid var(--lbef-blue);">
-                <p><strong>To-Do:</strong> Replace this placeholder with specific content for Home.</p>
+    <!-- ===================================================
+         HERO SECTION
+         Full-width banner with headline and two CTA buttons
+         =================================================== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to LBEF Global Connect</h1>
+            <p>
+                Empowering LBEF students for a global future through academic excellence,
+                cultural exchange, and the LBEF–APU Malaysia partnership.
+            </p>
+            <div class="hero-buttons">
+                <a href="pages/events/home.html" class="btn-white">Explore Events</a>
+                <a href="pages/academic/partnership.html" class="btn-outline">APU Partnership</a>
             </div>
-            <br>
-            <a href="#" class="btn">View Details</a>
         </div>
-    </main>
+    </section>
 
-   <main-footer></main-footer>
+    <!-- ===================================================
+         STATS BAR
+         Four key numbers about the club / partnership
+         =================================================== -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-num">500+</span>
+            <div class="stat-label">Active Members</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">30+</span>
+            <div class="stat-label">Events Per Year</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">120+</span>
+            <div class="stat-label">APU Transfer Alumni</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">15+</span>
+            <div class="stat-label">Partner Programs</div>
+        </div>
+    </div>
 
-    <script type="module" src="/js/main.js"></script>
+    <!-- ===================================================
+         STUDENT GUIDE SECTION
+         Three cards linking to key pages
+         =================================================== -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2>Student Guide</h2>
+                <a href="pages/general/about.html" class="link-more">View all guides &rarr;</a>
+            </div>
+
+            <div class="card-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Academic Calendar</h3>
+                    <p>View important dates for exams, registration deadlines, holidays, and the upcoming semester schedule.</p>
+                    <a href="pages/events/calendar.html" class="card-link">View calendar &rarr;</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Transfer to APU Malaysia</h3>
+                    <p>Step-by-step guide for LBEF students wishing to transfer credits and continue studies at APU Malaysia.</p>
+                    <a href="pages/academic/transfer.html" class="card-link">Learn how &rarr;</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Housing in Malaysia</h3>
+                    <p>Explore accommodation options near APU — from on-campus hostels to private apartments in Kuala Lumpur.</p>
+                    <a href="pages/academic/housing.html" class="card-link">Explore housing &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         LATEST NEWS SECTION
+         Three news cards with image, badge, date, and title
+         =================================================== -->
+    <section class="section section-white">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2>Latest News</h2>
+                <a href="pages/events/blog.html" class="link-more">View all articles &rarr;</a>
+            </div>
+
+            <div class="news-grid">
+
+                <!-- News Article 1 -->
+                <article class="news-card">
+                    <div class="news-img-wrap">
+                        <span class="news-badge badge-blue">Academic</span>
+                        <img
+                            src="assets/lbef-news1.jpg"
+                            alt="Students studying on campus"
+                            class="news-img"
+                        >
+                    </div>
+                    <div class="news-body">
+                        <p class="news-date"><i class="fas fa-clock"></i> Feb 10, 2026</p>
+                        <h3>Spring Semester Registration Now Open</h3>
+                        <p>Registration for the upcoming Spring semester is open for all undergraduate and postgraduate programs at LBEF.</p>
+                        <a href="pages/events/blog.html" class="card-link">Read more &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- News Article 2 -->
+                <article class="news-card">
+                    <div class="news-img-wrap">
+                        <span class="news-badge badge-green">Events</span>
+                        <img
+                            src="assets/lbef-news2.jpg"
+                            alt="Cultural exchange fair"
+                            class="news-img"
+                        >
+                    </div>
+                    <div class="news-body">
+                        <p class="news-date"><i class="fas fa-clock"></i> Jan 28, 2026</p>
+                        <h3>Annual Cultural Exchange Fair 2026</h3>
+                        <p>Join us for a day of food, music, and performances from over 20 countries represented by our student community.</p>
+                        <a href="pages/events/blog.html" class="card-link">Read more &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- News Article 3 -->
+                <article class="news-card">
+                    <div class="news-img-wrap">
+                        <span class="news-badge badge-purple">Partnership</span>
+                        <img
+                            src="assets/lbef-news3.jpg"
+                            alt="APU campus Malaysia"
+                            class="news-img"
+                        >
+                    </div>
+                    <div class="news-body">
+                        <p class="news-date"><i class="fas fa-clock"></i> Jan 15, 2026</p>
+                        <h3>Expanded APU Credit Transfer Pathway for 2026</h3>
+                        <p>LBEF announces an enhanced credit transfer agreement with APU Malaysia, covering five new degree programs.</p>
+                        <a href="pages/academic/partnership.html" class="card-link">Read more &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         LIFE AT LBEF — PHOTO GALLERY
+         CSS grid with a large item, two standard, one wide
+         =================================================== -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header-center">
+                <h2>Life at LBEF</h2>
+                <p>Experience the vibrant community and diverse activities that make LBEF unique.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Large item: 2 cols × 2 rows -->
+                <div class="gallery-item gallery-large">
+                    <img src="assets/lbef-g1.jpg" alt="Graduation ceremony">
+                    <div class="gallery-overlay"><span>Graduation Day</span></div>
+                </div>
+
+                <!-- Standard item -->
+                <div class="gallery-item">
+                    <img src="assets/lbef-g2.jpg" alt="Students on campus">
+                    <div class="gallery-overlay"><span>Campus Life</span></div>
+                </div>
+
+                <!-- Standard item -->
+                <div class="gallery-item">
+                    <img src="assets/lbef-g3.jpg" alt="Classroom session">
+                    <div class="gallery-overlay"><span>Classroom</span></div>
+                </div>
+
+                <!-- Wide item: 2 cols × 1 row -->
+                <div class="gallery-item gallery-wide">
+                    <img src="assets/lbef-g4.jpg" alt="LBEF library">
+                    <div class="gallery-overlay"><span>Library &amp; Study</span></div>
+                </div>
+            </div>
+
+            <div class="text-center mt-2">
+                <a href="pages/events/gallery.html" class="btn">
+                    <i class="fas fa-images"></i> View Full Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         CALL TO ACTION STRIP
+         Encourages students to join the club
+         =================================================== -->
+    <section style="background: var(--lbef-blue); color: white; text-align: center; padding: 60px 20px;">
+        <h2 style="font-size: 2rem; margin: 0 0 0.75rem;">Ready to Go Global?</h2>
+        <p style="color: rgba(255,255,255,0.85); max-width: 500px; margin: 0 auto 2rem;">
+            Join LBEF Global Connect and get access to events, scholarships, and the APU transfer pathway.
+        </p>
+        <a href="pages/membership/register.html" class="btn" style="font-size: 1.05rem; padding: 14px 36px;">
+            Join the Club Today
+        </a>
+    </section>
+
+    <main-footer></main-footer>
+
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
