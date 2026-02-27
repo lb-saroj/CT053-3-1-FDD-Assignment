@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/membership.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- SheetJS for Excel export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
 
@@ -62,10 +64,17 @@
                     </div>
                 </div>
 
-                <!-- Map placeholder -->
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <p>Minbhawan, Kathmandu</p>
+                <!-- Google Maps Embed -->
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.7!2d85.342!3d27.694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19fb00000001%3A0x4c4b1b1b1b1b1b1b!2sLBEF%20Campus!5e0!3m2!1sen!2snp!4v1700000000000"
+                        width="100%" height="220" style="border:0; border-radius:8px;"
+                        allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <a href="https://maps.app.goo.gl/YNG75so5ktQDFGQv5" target="_blank" class="map-link">
+                        <i class="fas fa-external-link-alt"></i> Open in Google Maps
+                    </a>
                 </div>
 
                 <!-- Social links -->
@@ -88,16 +97,18 @@
                     and a committee member will respond within 1–2 working days.
                 </p>
 
-                <form id="contactForm" style="margin-top: 1.25rem;">
+                <form id="contactForm" style="margin-top: 1.25rem;" novalidate>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="cName">Full Name *</label>
                             <input type="text" id="cName" placeholder="Your name" required>
+                            <span class="error-msg" id="cNameError"></span>
                         </div>
                         <div class="form-group">
                             <label for="cEmail">Email *</label>
                             <input type="email" id="cEmail" placeholder="your@email.com" required>
+                            <span class="error-msg" id="cEmailError"></span>
                         </div>
                     </div>
 
@@ -111,11 +122,13 @@
                             <option>Scholarship Information</option>
                             <option>Other</option>
                         </select>
+                        <span class="error-msg" id="cSubjectError"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="cMessage">Message *</label>
                         <textarea id="cMessage" placeholder="Write your message here..." required></textarea>
+                        <span class="error-msg" id="cMessageError"></span>
                     </div>
 
                     <button type="submit" class="btn" style="font-size: 1rem; padding: 12px 28px;">
@@ -133,6 +146,18 @@
                         </p>
                     </div>
                 </div>
+
+                <!-- Export stored submissions -->
+                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                    <h3>Stored Submissions</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        Contact form submissions are saved locally. Export them to an Excel file below.
+                    </p>
+                    <p id="submissionCount" style="font-size: 0.9rem; margin-bottom: 0.75rem;"></p>
+                    <button type="button" id="exportBtn" class="btn-blue" style="padding: 10px 20px; font-size: 0.9rem;">
+                        <i class="fas fa-file-excel"></i> Export to Excel
+                    </button>
+                </div>
             </div>
 
         </div>
@@ -142,11 +167,148 @@
     <script type="module" src="js/main.js"></script>
 
     <script>
+        // === VALIDATION HELPERS ===
+        function showError(id, msg) {
+            var el = document.getElementById(id);
+            var input = el.previousElementSibling;
+            el.textContent = msg;
+            el.style.display = 'block';
+            input.classList.add('input-error');
+        }
+
+        function clearError(id) {
+            var el = document.getElementById(id);
+            var input = el.previousElementSibling;
+            el.textContent = '';
+            el.style.display = 'none';
+            input.classList.remove('input-error');
+        }
+
+        function clearAllErrors() {
+            ['cNameError', 'cEmailError', 'cSubjectError', 'cMessageError'].forEach(clearError);
+        }
+
+        // Clear error on input
+        ['cName', 'cEmail', 'cSubject', 'cMessage'].forEach(function(id) {
+            document.getElementById(id).addEventListener('input', function() {
+                clearError(id + 'Error');
+            });
+        });
+
+        // === FORM VALIDATION & SUBMIT ===
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            clearAllErrors();
+
+            var name = document.getElementById('cName').value.trim();
+            var email = document.getElementById('cEmail').value.trim();
+            var subject = document.getElementById('cSubject').value;
+            var message = document.getElementById('cMessage').value.trim();
+            var valid = true;
+
+            // Name validation: required, min 2 chars, letters and spaces only
+            if (!name) {
+                showError('cNameError', 'Full name is required.');
+                valid = false;
+            } else if (name.length < 2) {
+                showError('cNameError', 'Name must be at least 2 characters.');
+                valid = false;
+            } else if (!/^[A-Za-z\s]+$/.test(name)) {
+                showError('cNameError', 'Name can only contain letters and spaces.');
+                valid = false;
+            }
+
+            // Email validation: required, valid format
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email) {
+                showError('cEmailError', 'Email address is required.');
+                valid = false;
+            } else if (!emailRegex.test(email)) {
+                showError('cEmailError', 'Please enter a valid email address.');
+                valid = false;
+            }
+
+            // Subject validation: must select one
+            if (!subject) {
+                showError('cSubjectError', 'Please select a subject.');
+                valid = false;
+            }
+
+            // Message validation: required, min 10 chars
+            if (!message) {
+                showError('cMessageError', 'Message is required.');
+                valid = false;
+            } else if (message.length < 10) {
+                showError('cMessageError', 'Message must be at least 10 characters.');
+                valid = false;
+            }
+
+            if (!valid) return;
+
+            // === STORE IN LOCALSTORAGE ===
+            var submission = {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message,
+                date: new Date().toLocaleString()
+            };
+
+            var submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+            submissions.push(submission);
+            localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+
+            // Show success, hide form
             this.style.display = 'none';
             document.getElementById('contactSuccess').style.display = 'block';
+            updateSubmissionCount();
         });
+
+        // === EXCEL EXPORT ===
+        function updateSubmissionCount() {
+            var submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+            var countEl = document.getElementById('submissionCount');
+            countEl.textContent = 'Total submissions stored: ' + submissions.length;
+            document.getElementById('exportBtn').disabled = submissions.length === 0;
+        }
+
+        document.getElementById('exportBtn').addEventListener('click', function() {
+            var submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+            if (submissions.length === 0) {
+                alert('No submissions to export.');
+                return;
+            }
+
+            // Prepare data for Excel
+            var data = submissions.map(function(s, i) {
+                return {
+                    'S.N.': i + 1,
+                    'Full Name': s.name,
+                    'Email': s.email,
+                    'Subject': s.subject,
+                    'Message': s.message,
+                    'Submitted On': s.date
+                };
+            });
+
+            // Create workbook and download
+            var ws = XLSX.utils.json_to_sheet(data);
+            // Set column widths
+            ws['!cols'] = [
+                { wch: 5 },  // S.N.
+                { wch: 20 }, // Name
+                { wch: 25 }, // Email
+                { wch: 22 }, // Subject
+                { wch: 40 }, // Message
+                { wch: 20 }  // Date
+            ];
+            var wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Contact Submissions');
+            XLSX.writeFile(wb, 'LBEF_Contact_Submissions.xlsx');
+        });
+
+        // Initialize count on page load
+        updateSubmissionCount();
     </script>
 
 </body>
